@@ -18,6 +18,7 @@
         // 1) 검색기능 
         // 2) 페이지 로딩이 빠르다. 
 
+
 // 🔷 body-parser 모듈 
     // express 의 미들웨어 
     // 요청으로 받은 body 의 내용을, req 요청 객체 안에 있는 body 객체로 담아준다. 
@@ -103,10 +104,10 @@
     app.use(express.urlencoded({extended  : false}))
 
     // mysql 연결 부터 하자 
-    const _mysql = mysqp2.createConnection({
+    const _mysql = mysql2.createConnection({
         user : "root", 
         password : "admin1234", 
-        database : "mysqlpwdj"
+        database : "test2"
     })
 
     // 테이블이 있는지 확인하자
@@ -121,7 +122,7 @@
             // name 는 문자 인데 - 20자 까지 
             // number 는 문자 인데 20자 까지 
 
-            _mysql2.query(sql);
+            _mysql.query(sql);
 
         } else {
 
@@ -169,11 +170,11 @@
     // 요청하는 url 을 다른 식으로 받기 
     app.get("/insert" , (req, res) => {
         res.render("insert");
-
     })
 
 
     // 데이터를 쓰는 역할 
+
     // POST 메소드 
         // url 은 동일하지만, 메소드 방식에 따라서, 차이가 나뉨. 
     app.post('/insert' , (req, res) => {
@@ -187,7 +188,7 @@
             // key 는 name 에 적은 value
     
         // 이 값을 데이터 베이스에 추가 
-        const sql = "INSERT INTO products() (name, number, series)VALUES(?,?,?)"
+        const sql = "INSERT INTO products (name, number, series)VALUES(?,?,?)"
             // products() 테이블에 넣을거야 -> 변수 어떻게 넣지? 괄호
             // VALUE 를 따로 넣어줄 수 있음. 
 
@@ -227,10 +228,7 @@
                     // 뒤에 있는 숫자가, id 의 key 로 들어온다.
                     // url 에서 /delete2 하면 > 2번 글이 지워짐.
                     // 3 을 넣으면 -> id 값이 3 
-
             })
-
-
 
             // query 메소드의 두 번째 매개변수로, '배열' 을 전달해줄 수 있음. 
             
@@ -240,13 +238,10 @@
             res.send();
     })
 
-
-
     app.listen(8080, () => {
         console.log("서버 열림~");
     } )
         // 열렸는지 확인~ 
-
 
 
 
