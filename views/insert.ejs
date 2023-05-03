@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- 데이터를 보낼 때 form 쓰잖아 -->
+    <!-- post 방식의 메소드로 데이터를 보냄 -->
+    <!-- action 에는 요청할 url 넣기. 없다면, 현재 url -->
+    <form action="/insert" method="post">
+        <label for=""> 이름 </label>
+        <input type="text" name="name">
+
+        <label for=""> 전화번호 </label>
+        <input type="text" name="name">
+        
+        <label for=""> 시리즈 </label>
+        <input type="text" name="series">
+
+        <button type="submit"> 추가 </button>
+        <!-- 타입 설정 안 하면, 기본이 '추가' -->
+
+        <!-- name="name" 익이게 중요 
+        왜냐면, 보낸게, {name : 인풋밸류 , name : 인풋밸류, series : 인풋밸류} 이렇게 객체 안으로 들어감 -->
+
+
+    </form>
+        <!-- method : 요청하는 방식 POST GET 등 -->
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <table style="width: 100%;">
+        <a href="/insert"> 추가 페이지로 가자 </a>
+
+        <tr>
+            <th>삭제</th>
+            <th>수정</th>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>시리즈</th>
+            
+        </tr>
+
+        <!-- 페이지에, 리스트면, 여러개의 데이터가 있을 것 임. -->
+        <!-- html 에서 동적으로 뭔가를 해본적이 없지요? -->
+
+        <!-- 서버사이드를 하면, 동적으로 가능하죠!⭐⭐⭐ -->
+
+        <!-- ejs 문법 -->
+            <!-- <% : 이게 스크립트 영역임 | 반복을 돌리게 됨 -->
+            <!-- <%= el.id % : 변수 표기법 | el 을 가져오려면, 이렇게 써야 함. -->
+        <% data.forEach(function(el, index) => { % >
+            <tr>
+                <td>삭제</td>
+                <td>수정</td>
+                <td><%= el.id %></td>
+                <td><%= el.name %></td>
+                <td><%= el.number %> </td>
+                <td><%= el.series %> </td>
+            </tr>
+        <% }); %>
+
+    </table>
+
+    <script>
+        let data = [];
+        data.forEach(function(el, index) => {
+
+        })
+
+    </script>
+
+</body>
+</html>
